@@ -4,7 +4,7 @@ export const MENUS: any[] = [
         route: 'student'
     },
     {
-        name: 'Müfredat',
+        name: 'Müfredat İşlemleri',
         route: 'curriculum'
     },
     {

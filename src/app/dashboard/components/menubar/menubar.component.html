@@ -7,7 +7,7 @@
 
         <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
 
-            <ul class="navbar-nav col-lg-8 justify-content-lg-center">
+            <ul class="navbar-nav col-lg-6 justify-content-lg-center">
 
                 <li class="nav-item" *ngFor="let menu of menus">
                     <a class="nav-link" [class]="1 === 1 ? 'active' : ''" aria-current="page" [routerLink]="menu.route"
@@ -46,9 +46,9 @@
                 </li> -->
             </ul>
 
-            <div class="d-lg-flex col-lg-4 justify-content-lg-end">
-                <ul class="navbar-nav col-lg-8 justify-content-lg-center">
-                    <li class="nav-item dropdown">
+            <div class="d-lg-flex col-lg-6 justify-content-lg-end">
+                <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                    <li class="nav-item dropdown" style="cursor: pointer;">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                             aria-expanded="false" [innerText]="accountMenus.name"></a>
                         <ul class="dropdown-menu">
