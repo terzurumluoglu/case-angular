@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
+            aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+
+            <ul class="navbar-nav col-lg-8 justify-content-lg-center">
+
+                <li class="nav-item" *ngFor="let menu of menus">
+                    <a class="nav-link" [class]="1 === 1 ? 'active' : ''" aria-current="page" [routerLink]="menu.route"
+                        [innerText]="menu.name"></a>
+                </li>
+
+                <!-- <li class="nav-item" [class]="menu?.subMenus ? 'dropdown' : ''" *ngFor="let menu of menus">
+                    <a class="nav-link" [class]="menu?.subMenus ? 'dropdown-toggle' : ''"  data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-current="page" [innerText]="menu?.name" [routerLink]="menu?.route"></a>
+                    <ul class="dropdown-menu" *ngIf="menu?.subMenus">
+                        <li *ngFor="let subMenu of menu.subMenus">
+                            <a class="dropdown-item" [routerLink]="subMenu.route" [innerText]="subMenu.name"></a>
+                        </li>
+                    </ul>
+                </li> -->
+
+
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                        aria-expanded="false">Dropdown</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li> -->
+            </ul>
+
+            <div class="d-lg-flex col-lg-4 justify-content-lg-end">
+                <ul class="navbar-nav col-lg-8 justify-content-lg-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false" [innerText]="accountMenus.name"></a>
+                        <ul class="dropdown-menu">
+                            <li *ngFor="let subMenu of accountMenus.subMenus">
+                                <a class="dropdown-item" [innerText]="subMenu.name" (click)="subMenu.fn()"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
