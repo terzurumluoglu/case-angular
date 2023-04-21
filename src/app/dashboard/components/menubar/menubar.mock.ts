@@ -30,9 +30,7 @@ export const ACCOUNT_MENUS: any = {
         },
         {
             name: 'logout',
-            fn: () => {
-                console.log('HOP');
-            }
+            route: undefined
         }
     ]
 }

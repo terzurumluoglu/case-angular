@@ -53,7 +53,7 @@
                             aria-expanded="false" [innerText]="accountMenus.name"></a>
                         <ul class="dropdown-menu">
                             <li *ngFor="let subMenu of accountMenus.subMenus">
-                                <a class="dropdown-item" [innerText]="subMenu.name" (click)="subMenu.fn()"></a></li>
+                                <a class="dropdown-item" [innerText]="subMenu.name" (click)="fn(subMenu)"></a></li>
                         </ul>
                     </li>
                 </ul>
