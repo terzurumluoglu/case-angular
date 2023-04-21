@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "address": "CUMHURİYET MAH. BİRİNCİ SOK. İKİNCİ APT. NO:111/6",
+        "city": "ANKARA",
+        "district": "YENİMAHALLE",
+        "email": "abc@hotmail.com",
+        "gsm": "5332342342"
+    },
+    {
+        "id": 2,
+        "address": "KUŞADASI SOK. NO:123 KARAAĞAÇ",
+        "city": "ANKARA",
+        "district": "ÇANKAYA",
+        "email": "def@gmail.com",
+        "gsm": "5437657567"
+    },
+    {
+        "id": 3,
+        "address": "TURAN GÜNEŞ BULVARI TAMTAM SİTESİ 13. CAD. NO:51",
+        "city": "ANKARA",
+        "district": "KEÇİÖREN",
+        "email": "ghi@abc.com",
+        "gsm": "5305464646"
+    },
+    {
+        "id": 4,
+        "address": "DEMİRCİKARA MAH. B.ONAT CAD. HEDE SİT. B BLOK NO : 1",
+        "city": "ANKARA",
+        "district": "PURSAKLAR",
+        "email": "mno@xyz.com",
+        "gsm": "5555424245"
+    },
+    {
+        "id": 5,
+        "address": "AHMET HAMDİ SOK. NO:19/15",
+        "city": "ANKARA",
+        "district": "SİNCAN",
+        "email": "prs@hotmail.com",
+        "gsm": "5302908432"
+    },
+    {
+        "id": 6,
+        "address": "SİTELER MAHALLESİ 6223 SOKAK DURU APT. NO:11 KAT:3",
+        "city": "ANKARA",
+        "district": "POLATLI",
+        "email": "klm@outlook.com",
+        "gsm": "5408932042"
+    }
+]

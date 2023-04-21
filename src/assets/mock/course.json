@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "courseCode": "HUM101",
+        "courseName": "Türk Demokrasi Tarihi",
+        "status": 1,
+        "credit": 5
+    },
+    {
+        "id": 2,
+        "courseCode": "MATH102",
+        "courseName": "Calculus",
+        "status": 0,
+        "credit": 6
+    },
+    {
+        "id": 3,
+        "courseCode": "MATE103",
+        "courseName": "Metalurjiye Giriş",
+        "status": 0,
+        "credit": 6
+    },
+    {
+        "id": 4,
+        "courseCode": "GRA105",
+        "courseName": "Grafik Dizayn",
+        "status": 1,
+        "credit": 5
+    },
+    {
+        "id": 5,
+        "courseCode": "CMPE201",
+        "courseName": "Bilgisayar Teknolojileri",
+        "status": 1,
+        "credit": 4
+    },
+    {
+        "id": 6,
+        "courseCode": "ENG102",
+        "courseName": "İngilizce",
+        "status": 1,
+        "credit": 4
+    },
+    {
+        "id": 7,
+        "courseCode": "MATH201",
+        "courseName": "İleri Calculus",
+        "status": 1,
+        "credit": 6
+    }
+]

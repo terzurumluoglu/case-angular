@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "curriculumId": 1,
+        "courseId": 2
+    },
+    {
+        "id": 2,
+        "curriculumId": 1,
+        "courseId": 5
+    },
+    {
+        "id": 3,
+        "curriculumId": 1,
+        "courseId": 6
+    },
+    {
+        "id": 4,
+        "curriculumId": 1,
+        "courseId": 7
+    },
+    {
+        "id": 5,
+        "curriculumId": 2,
+        "courseId": 1
+    },
+    {
+        "id": 6,
+        "curriculumId": 2,
+        "courseId": 2
+    },
+    {
+        "id": 7,
+        "curriculumId": 2,
+        "courseId": 3
+    },
+    {
+        "id": 8,
+        "curriculumId": 2,
+        "courseId": 4
+    },
+    {
+        "id": 9,
+        "curriculumId": 2,
+        "courseId": 6
+    },
+    {
+        "id": 10,
+        "curriculumId": 2,
+        "courseId": 7
+    },
+    {
+        "id": 11,
+        "curriculumId": 3,
+        "courseId": 1
+    },
+    {
+        "id": 12,
+        "curriculumId": 3,
+        "courseId": 4
+    },
+    {
+        "id": 13,
+        "curriculumId": 3,
+        "courseId": 5
+    },
+    {
+        "id": 14,
+        "curriculumId": 3,
+        "courseId": 6
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "studentId": 3,
+        "courseId": 3,
+        "createdDate": "04.11.2021"
+    },
+    {
+        "id": 2,
+        "studentId": 4,
+        "courseId": 6,
+        "createdDate": "04.11.2021"
+    }
+]
