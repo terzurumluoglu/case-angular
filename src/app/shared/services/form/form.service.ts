@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
-import { IField } from '../../model/IField';
+import { IField } from '../../../model/IField';
 
 @Injectable({
   providedIn: 'root'
