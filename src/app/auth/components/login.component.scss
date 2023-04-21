@@ -91,3 +91,9 @@
 .bd-mode-toggle {
     z-index: 1500;
 }
+
+.d-justify-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

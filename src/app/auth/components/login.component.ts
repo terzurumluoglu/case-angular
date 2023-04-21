@@ -39,8 +39,8 @@ export class LoginComponent implements OnInit {
 
   async getFormData(event: FormGroup) {
     const { username, password } = event.getRawValue();
-    const user: IUser | undefined = await this.authService.login({ username, password });
-    if (user) {
+    const identity: IIdentity | undefined = await this.authService.login({ username, password });
+    if (identity) {
       this.router.navigateByUrl('dashboard');
     } else {
       this.toastr.error('User not found','Error');

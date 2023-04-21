@@ -1,33 +1,55 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, filter, find, lastValueFrom, map } from 'rxjs';
-import { IUser } from 'src/app/model';
+import { Router } from '@angular/router';
+import { BehaviorSubject, lastValueFrom } from 'rxjs';
+import { IIdentity, IUser } from 'src/app/model';
+import { IdentityService } from 'src/app/shared/services/identity/identity.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private userSubject$: BehaviorSubject<IUser | undefined> = new BehaviorSubject<IUser | undefined>(undefined);
+  usersPath: string = 'users.json';
 
-  constructor(private http: HttpClient) { }
+  userSubject$: BehaviorSubject<IIdentity | undefined> = new BehaviorSubject<IIdentity | undefined>(undefined);
 
-  public get userValue(): IUser | undefined {
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private identityService: IdentityService
+  ) { }
+
+  public get userValue(): IIdentity | undefined {
     return this.userSubject$.value;
   }
 
-  async login(u: { username: string, password: string }): Promise<IUser | undefined> {
-    return await lastValueFrom(
-      this.http.get<IUser[]>('assets/mock/users.json').pipe(
-        map((users: IUser[]) => {
-          const user: IUser | undefined = users.find(user => user.username === u.username && user.password === u.password);
-          if (user) {
-            this.userSubject$.next(user);
-            localStorage.setItem('user',JSON.stringify(user));
-          }
-          return user;
-        })
-      )
-    );
+  async login(u: { username: string, password: string }): Promise<IIdentity | undefined> {
+    const path: string = environment.apiUrl + this.usersPath;
+
+    const users: any[] = await lastValueFrom(this.http.get<IUser[]>(path));
+    const foundUser: any = users.find(user => user.username === u.username && user.password === u.password);
+    if (!foundUser) {
+      return undefined;
+    }
+    const {password, ...user} = foundUser;
+    const identity: IIdentity | undefined = await this.identityService.getIdentityById(user.identityId);
+
+    if (!identity) {
+      return undefined;
+    }
+    identity.user = user;
+
+    localStorage.setItem('identity', JSON.stringify(identity));
+    this.userSubject$.next(identity);
+    return identity;
+
+  }
+
+  logout() {
+    this.userSubject$.next(undefined);
+    localStorage.clear();
+    this.router.navigateByUrl('/login');
   }
 }
