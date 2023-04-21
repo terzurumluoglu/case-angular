@@ -1,3 +1,5 @@
+import { IUser } from "./IUser";
+
 export interface IIdentity {
     id: number;
     tc: number;
@@ -6,4 +8,5 @@ export interface IIdentity {
     bornCity: string;
     bornDate: string;
     contactId: number;
+    user?: IUser;
 }
