@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: async () => (await import('./auth/auth.module')).AuthModule
+  },
+  {
+    path: 'dashboard',
+    loadChildren: async () => (await import('./dashboard/dashboard.module')).DashboardModule
   }
 ];
 
