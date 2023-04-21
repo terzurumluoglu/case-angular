@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormService } from '../../services/form.service';
+import { FormService } from '../../services/form/form.service';
 import { FormGroup } from '@angular/forms';
 import { IField } from 'src/app/model/IField';
 
