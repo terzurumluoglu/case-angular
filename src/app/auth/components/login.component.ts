@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
-import { IField } from 'src/app/model/IField';
+import { IField, IUser } from '../../model';
+import { AuthService } from '../services/auth/auth.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -26,11 +29,21 @@ export class LoginComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit(): void { }
 
-  getFormData(event: FormGroup) {
-    console.log(event);
+  async getFormData(event: FormGroup) {
+    const { username, password } = event.getRawValue();
+    const user: IUser | undefined = await this.authService.login({ username, password });
+    if (user) {
+      this.router.navigateByUrl('dashboard');
+    } else {
+      this.toastr.error('User not found','Error');
+    }
   }
 }
