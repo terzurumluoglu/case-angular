@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormComponent } from './components/form/form.component';
-import { FormService } from './services/form.service';
+import { FormService } from './services/form/form.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
