@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(private auth: AuthService) {
     let identity = localStorage.getItem('identity');
     if (!!identity && !auth.userValue) {
-      auth.userSubject$.next(JSON.parse(identity)); 
+      auth.setUserSubject(JSON.parse(identity)); 
     }
   }
 }
