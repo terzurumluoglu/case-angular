@@ -19,17 +19,19 @@ export class LoginComponent implements OnInit {
       name: 'username',
       initialValue: 'hasan.ersoy',
       validators: [Validators.required],
+      disabled: false,
       type: 'text'
     },
     {
       name: 'password',
       initialValue: 'Haser1.',
       validators: [Validators.required],
+      disabled: false,
       type: 'password'
     }
   ];
 
-  returnUrl!: string;
+  returnUrl: string;
 
   constructor(
     private authService: AuthService,
@@ -44,7 +46,7 @@ export class LoginComponent implements OnInit {
 
   async getFormData(event: FormGroup) {
     const { username, password } = event.getRawValue();
-    const identity = await this.authService.login({ username, password })
+    const identity = await this.authService.login({ username, password });
     if (identity) {
       this.router.navigateByUrl(this.returnUrl);
     } else {
