@@ -9,6 +9,7 @@ import { StudentComponent } from './components/student/student.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
 import { CourseComponent } from './components/course/course.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ContactComponent } from './components/contact/contact.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     DashboardRoutingModule
   ]
 })
