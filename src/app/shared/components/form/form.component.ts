@@ -10,21 +10,28 @@ import { IField } from 'src/app/model/IField';
 })
 export class FormComponent {
 
-  @Input() formName?: string;
+  @Input() formName: string;
+
+  @Input() buttonText: string = 'Save';
   
   @Input() set fields(val: IField[]) {
+    this.form = undefined;
     this.formFields = val;
     this.createForm(val);
   }
 
   @Output() sendFormData = new EventEmitter();
 
-  form!: FormGroup;
-  formFields!: IField[];
+  form: FormGroup;
+  formFields: IField[];
 
   constructor(
     private formService: FormService
   ) { }
+
+  isButtonHidden() {
+    return this.formFields.every(field => field.disabled);
+  }
 
   createForm(fields: IField[]) {
     this.form = this.formService.createReactiveForm(fields);

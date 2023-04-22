@@ -1,11 +1,11 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
     <h1 class="h3 mb-3 fw-normal" [innerText]="formName"></h1>
 
-    <div class="form-floating" *ngFor="let field of formFields">
+    <div class="form-floating mb-2" *ngFor="let field of formFields">
         <input [formControlName]="field.name" [type]="field.type" class="form-control" [id]="field.name"
-            [placeholder]="field.name">
+            [placeholder]="field.name" [readonly]="field.disabled">
         <label [for]="field.name" [innerText]="field.name"></label>
     </div>
 
-    <button class="w-100 mt-3 btn btn-lg btn-primary" type="submit">{{formName}}</button>
+    <button *ngIf="!isButtonHidden()" class="w-100 mt-3 btn btn-lg btn-primary" type="submit">{{buttonText}}</button>
 </form>
