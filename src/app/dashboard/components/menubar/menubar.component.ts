@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class MenubarComponent implements OnInit {
 
-  identity?: IIdentity;
+  identity: IIdentity;
   menus: any[] = MENUS;
   accountMenus: any = ACCOUNT_MENUS;
 
@@ -23,7 +23,7 @@ export class MenubarComponent implements OnInit {
 
   fn(subMenu: any) {
     if (subMenu.route) {
-      const path: string = this.router.url + '/' + subMenu.route;
+      const path: string = `dashboard/${subMenu.route}`;
       this.router.navigateByUrl(path);
     } else {
       this.logout();
