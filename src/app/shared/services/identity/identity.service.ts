@@ -21,7 +21,7 @@ export class IdentityService {
     return lastValueFrom(this.http.get(this.identityPath));
   }
 
-  getIdentityById(id: number): Promise<IIdentity | undefined> {
+  getIdentityById(id: number): Promise<IIdentity> {
     return lastValueFrom(this.http.get<IIdentity[]>(this.identityPath).pipe(
       map((identities: IIdentity[]) => {
         return identities.find(identity => identity.id === id);

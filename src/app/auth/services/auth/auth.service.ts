@@ -13,7 +13,7 @@ export class AuthService {
 
   usersPath: string = 'users.json';
 
-  userSubject$: BehaviorSubject<IIdentity | undefined> = new BehaviorSubject<IIdentity | undefined>(undefined);
+  private userSubject$: BehaviorSubject<IIdentity> = new BehaviorSubject<IIdentity>(undefined);
 
   constructor(
     private router: Router,
@@ -21,11 +21,19 @@ export class AuthService {
     private identityService: IdentityService
   ) { }
 
-  public get userValue(): IIdentity | undefined {
+  public get userValue(): IIdentity {
     return this.userSubject$.value;
   }
 
-  async login(u: { username: string, password: string }): Promise<IIdentity | undefined> {
+  public getUserSubject() {
+    return this.userSubject$.pipe(user => user);
+  }
+
+  public setUserSubject(val: IIdentity) {
+    this.userSubject$.next(val);
+  }
+
+  async login(u: { username: string, password: string }): Promise<IIdentity> {
     const path: string = environment.apiUrl + this.usersPath;
 
     const users: any[] = await lastValueFrom(this.http.get<IUser[]>(path));
@@ -34,7 +42,7 @@ export class AuthService {
       return undefined;
     }
     const {password, ...user} = foundUser;
-    const identity: IIdentity | undefined = await this.identityService.getIdentityById(user.identityId);
+    const identity: IIdentity = await this.identityService.getIdentityById(user.identityId);
 
     if (!identity) {
       return undefined;
@@ -42,13 +50,13 @@ export class AuthService {
     identity.user = user;
 
     localStorage.setItem('identity', JSON.stringify(identity));
-    this.userSubject$.next(identity);
+    this.setUserSubject(identity);
     return identity;
 
   }
 
   logout() {
-    this.userSubject$.next(undefined);
+    this.setUserSubject(undefined);
     localStorage.clear();
     this.router.navigateByUrl('/login');
   }
