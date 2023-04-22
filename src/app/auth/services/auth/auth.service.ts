@@ -1,24 +1,19 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, lastValueFrom } from 'rxjs';
-import { IIdentity, IUser } from 'src/app/model';
-import { IdentityService } from 'src/app/shared/services/identity/identity.service';
-import { environment } from 'src/environments/environment';
+import { BehaviorSubject } from 'rxjs';
+import { IIdentity } from 'src/app/model';
+import { StateService } from 'src/app/shared/services/state/state.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  usersPath: string = 'users.json';
-
   private userSubject$: BehaviorSubject<IIdentity> = new BehaviorSubject<IIdentity>(undefined);
 
   constructor(
     private router: Router,
-    private http: HttpClient,
-    private identityService: IdentityService
+    private stateService: StateService
   ) { }
 
   public get userValue(): IIdentity {
@@ -34,15 +29,18 @@ export class AuthService {
   }
 
   async login(u: { username: string, password: string }): Promise<IIdentity> {
-    const path: string = environment.apiUrl + this.usersPath;
 
-    const users: any[] = await lastValueFrom(this.http.get<IUser[]>(path));
-    const foundUser: any = users.find(user => user.username === u.username && user.password === u.password);
+    const foundUser: any = (this.stateService.users$.value as any[])
+      .find(user =>
+        user.username === u.username &&
+        user.password === u.password);
+
     if (!foundUser) {
       return undefined;
     }
-    const {password, ...user} = foundUser;
-    const identity: IIdentity = await this.identityService.getIdentityById(user.identityId);
+    const { password, ...user } = foundUser;
+
+    const identity: IIdentity = this.stateService.identity$.value.find(identity => identity.id === user.identityId);
 
     if (!identity) {
       return undefined;
