@@ -1,0 +1,12 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" *ngFor="let key of tableKeys" [innerText]="key"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td *ngFor="let key of tableKeys" [innerText]="identity[key]">Mark</td>
+        </tr>
+    </tbody>
+</table>
