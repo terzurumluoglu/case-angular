@@ -10,27 +10,29 @@ import { CourseComponent } from './components/course/course.component';
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent
-  },
-  {
-    path: 'identity',
-    component: IdentityComponent
-  },
-  {
-    path: 'student',
-    component: StudentComponent
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
-  },
-  {
-    path: 'curriculum',
-    component: CurriculumComponent
-  },
-  {
-    path: 'course',
-    component: CourseComponent
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'identity',
+        component: IdentityComponent
+      },
+      {
+        path: 'student',
+        component: StudentComponent
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
+      },
+      {
+        path: 'curriculum',
+        component: CurriculumComponent
+      },
+      {
+        path: 'course',
+        component: CourseComponent
+      }
+    ]
   }
 ];
 
