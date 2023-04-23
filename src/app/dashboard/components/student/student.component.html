@@ -1,1 +1,28 @@
-<p>student works!</p>
+<div class="row justify-content-between">
+    <div class="col-sm-5 bg-body-tertiary border rounded-3 p-5">
+
+        <div class="card mb-3" *ngFor="let student of students">
+            <div class="card-header">
+                <span *ngIf="student.identity" [innerText]="student.identity.name + ' ' + student.identity.surname"></span>
+                <span *ngIf="!student.identity.name || !student.identity.surname">The system is waiting to enter a name</span>
+            </div>
+            <div class="card-body">
+                <a class="btn btn-link">
+                    <span (click)="editInfo(student,'student')">Öğrenci Bilgisi Güncelle</span>
+                </a>
+                <a class="btn btn-link" *ngFor="let button of buttons" (click)="editInfo(student,button.code)">
+                    <span [innerText]="student[button.code] ? button.name + 'Güncelle' : button.name + 'Ekle'"></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <button class="w-100 mt-3 btn btn-primary" type="submit" (click)="editInfo(undefined,'student')">Öğrenci Ekle</button>
+        </div>
+    </div>
+    <div class="col-sm-7 bg-body-tertiary border rounded-3 p-5">
+        <app-form *ngIf="selectedCode === 'student'" [formName]="formName" [buttonText]="buttonText" [fields]="fields" (sendFormData)="getFormData($event)"></app-form>
+        <app-identity (update)="update()" *ngIf="selectedCode === 'identity'" [id]="selectedStudent?.identity?.id"></app-identity>
+        <app-contact (update)="update()" *ngIf="selectedCode === 'contact'" [id]="selectedStudent?.contact?.id"></app-contact>
+    </div>
+</div>
