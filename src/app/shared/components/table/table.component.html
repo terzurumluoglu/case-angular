@@ -1,12 +1,12 @@
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
             <th scope="col" *ngFor="let key of tableKeys" [innerText]="key"></th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td *ngFor="let key of tableKeys" [innerText]="identity[key]">Mark</td>
+        <tr *ngFor="let tData of tableData" style="cursor: pointer;">
+            <td *ngFor="let key of tableKeys" [innerText]="tData[key]" (click)="selectRow(tData.id)"></td>
         </tr>
     </tbody>
 </table>

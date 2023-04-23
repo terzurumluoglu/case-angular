@@ -1,23 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/auth/services/auth/auth.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
 
-  identity: any;
+  @Input() set data(val: any[]) {
+    this.tableData = val;
+    const { id, ...obj } = val[0];
+    this.tableKeys = Object.keys(obj);
+  }
+
+  @Output() selectedRow: EventEmitter<number> = new EventEmitter();
+
+  tableData: any[];
   tableKeys: string[];
-  constructor(
-    private authService: AuthService
-  ) { }
+  
+  constructor() { }
 
-  ngOnInit(): void {
-    this.identity = this.authService.userValue;
-    const { id, contactId, user, ...data } = this.identity;
-    this.tableKeys = Object.keys(data);
+  selectRow(id: number) {
+    this.selectedRow.emit(id);
   }
 
 }
