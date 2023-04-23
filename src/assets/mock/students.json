@@ -1,31 +1,31 @@
 [
     {
         "id": 1,
-        "studentNo": 27482379,
+        "studentNo": "27482379",
         "identityId": 3,
         "curriculumId": 1
     },
     {
         "id": 2,
-        "studentNo": 23462368,
+        "studentNo": "23462368",
         "identityId": 5,
         "curriculumId": 1
     },
     {
         "id": 3,
-        "studentNo": 34565479,
+        "studentNo": "34565479",
         "identityId": 6,
         "curriculumId": 2
     },
     {
         "id": 4,
-        "studentNo": 53456346,
+        "studentNo": "53456346",
         "identityId": 2,
         "curriculumId": 2
     },
     {
         "id": 5,
-        "studentNo": 34674575,
+        "studentNo": "34674575",
         "identityId": 4,
         "curriculumId": 3
     }

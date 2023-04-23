@@ -2,7 +2,7 @@ import { IUser } from "./IUser";
 
 export interface IIdentity {
     id: number;
-    tc: number;
+    tc: string;
     name: string;
     surname: string;
     bornCity: string;

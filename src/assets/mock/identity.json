@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "tc": 45456747611,
+        "tc": "45456747611",
         "name": "Hasan",
         "surname": "Ersoy",
         "bornCity": "Kayseri",
@@ -10,7 +10,7 @@
     },
     {
         "id": 2,
-        "tc": 67967856634,
+        "tc": "67967856634",
         "name": "Mehmet",
         "surname": "Yılmaz",
         "bornCity": "Adana",
@@ -19,7 +19,7 @@
     },
     {
         "id": 3,
-        "tc": 72347322958,
+        "tc": "72347322958",
         "name": "Ahmet",
         "surname": "Ünal",
         "bornCity": "Ankara",
@@ -28,7 +28,7 @@
     },
     {
         "id": 4,
-        "tc": 97850348520,
+        "tc": "97850348520",
         "name": "Mustafa",
         "surname": "Işık",
         "bornCity": "Sivas",
@@ -37,7 +37,7 @@
     },
     {
         "id": 5,
-        "tc": 32756874239,
+        "tc": "32756874239",
         "name": "Ayşe",
         "surname": "Erdoğan",
         "bornCity": "Uşak",
@@ -46,7 +46,7 @@
     },
     {
         "id": 6,
-        "tc": 98423479320,
+        "tc": "98423479320",
         "name": "Fatma",
         "surname": "Korkmaz",
         "bornCity": "Kütahya",
