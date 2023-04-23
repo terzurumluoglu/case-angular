@@ -14,11 +14,11 @@ export class StudentComponent implements OnInit {
   buttons: any[] = [
     {
       code: 'identity',
-      name: 'Kimlik Bilgisi ',
+      name: 'Kimlik Bilgi ',
     },
     {
       code: 'contact',
-      name: 'İletişim Bilgisi ',
+      name: 'İletişim Bilgi ',
     },
   ];
 
@@ -134,7 +134,7 @@ export class StudentComponent implements OnInit {
   }
 
   editStudentInfo() {
-    this.formName = 'Öğrenci Bilgisi Güncelle';
+    this.formName = 'Öğrenci Bilgi Güncelle';
     this.buttonText = 'Güncelle';
     this.fields = [
       {
@@ -148,7 +148,7 @@ export class StudentComponent implements OnInit {
   }
 
   editIdentityInfo() {
-    this.formName = 'Öğrenci Kimlik Bilgisi Güncelle';
+    this.formName = 'Öğrenci Kimlik Bilgi Güncelle';
     this.buttonText = 'Güncelle';
     this.fields = [
       {
@@ -162,7 +162,7 @@ export class StudentComponent implements OnInit {
   }
 
   editContactInfo() {
-    this.formName = 'Öğrenci İletişim Bilgisi Güncelle';
+    this.formName = 'Öğrenci İletişim Bilgi Güncelle';
     this.buttonText = 'Güncelle';
     this.fields = [
       {
