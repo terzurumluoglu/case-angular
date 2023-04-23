@@ -48,7 +48,7 @@ export class IdentityComponent implements OnInit {
     },
   ];
 
-  identity: IIdentity | any;
+  identity: IIdentity;
   constructor(
     private authService: AuthService
   ) { }
@@ -56,7 +56,8 @@ export class IdentityComponent implements OnInit {
   ngOnInit(): void {
     this.identity = this.authService.userValue;
     this.fields.forEach(item => {
-      item.initialValue = this.identity[item.name];
+      item.initialValue = this.identity[item.name as keyof IIdentity];
+      item.disabled = !!this.identity.user.type;
     })
   }
 
