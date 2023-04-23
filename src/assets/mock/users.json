@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "username": "hasan.ersoy",
+        "password": "Haser1.",
+        "type": 0,
+        "identityId": 1
+    },
+    {
+        "id": 2,
+        "username": "mehmet.yilmaz",
+        "password": "Mehyil6!",
+        "type": 1,
+        "identityId": 2
+    },
+    {
+        "id": 3,
+        "username": "ahmet.unal",
+        "password": "Ahun23+",
+        "type": 1,
+        "identityId": 3
+    },
+    {
+        "id": 4,
+        "username": "mustafa.isik",
+        "password": "Musi64%",
+        "type": 1,
+        "identityId": 4
+    },
+    {
+        "id": 5,
+        "username": "ayse.erdogan",
+        "password": "Ayer33.",
+        "type": 1,
+        "identityId": 5
+    },
+    {
+        "id": 6,
+        "username": "fatma.korkmaz",
+        "password": "Fatkor12%",
+        "type": 1,
+        "identityId": 6
+    }
+]
