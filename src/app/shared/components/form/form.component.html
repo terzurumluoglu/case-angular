@@ -1,11 +1,16 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
     <h1 class="h3 mb-3 fw-normal" [innerText]="formName"></h1>
 
-    <div class="form-floating mb-2" *ngFor="let field of formFields">
-        <input [formControlName]="field.name" [type]="field.type" class="form-control" [id]="field.name"
+    <div [class]="field.type === 'checkbox' ? 'form-check form-switch' : 'form-floating mb-2'" *ngFor="let field of formFields">
+        <input *ngIf="field.type !== 'checkbox'" [formControlName]="field.name" [type]="field.type" class="form-control" [id]="field.name"
             [placeholder]="field.name" [readonly]="field.disabled">
-        <label [for]="field.name" [innerText]="field.name"></label>
+        <label *ngIf="field.type !== 'checkbox'" [for]="field.name" [innerText]="field.name"></label>
+
+
+        <input *ngIf="field.type === 'checkbox'" [formControlName]="field.name" class="form-check-input" type="checkbox" role="switch" [id]="field.name" [checked]="field.initialValue">
+        <label *ngIf="field.type === 'checkbox'" class="form-check-label" [for]="field.name">Checked switch checkbox input</label>
     </div>
 
-    <button *ngIf="!isButtonHidden()" [disabled]="form.invalid" class="w-100 mt-3 btn btn-primary" type="submit">{{buttonText}}</button>
+    <button *ngIf="!isButtonHidden()" [disabled]="form.invalid" class="w-100 mt-3 btn btn-primary"
+        type="submit">{{buttonText}}</button>
 </form>
