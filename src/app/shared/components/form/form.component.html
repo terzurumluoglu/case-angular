@@ -7,5 +7,5 @@
         <label [for]="field.name" [innerText]="field.name"></label>
     </div>
 
-    <button *ngIf="!isButtonHidden()" class="w-100 mt-3 btn btn-primary" type="submit">{{buttonText}}</button>
+    <button *ngIf="!isButtonHidden()" [disabled]="form.invalid" class="w-100 mt-3 btn btn-primary" type="submit">{{buttonText}}</button>
 </form>
