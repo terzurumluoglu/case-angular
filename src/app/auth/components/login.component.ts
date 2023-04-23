@@ -42,6 +42,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'dashboard';
+    if (this.authService.userValue) {
+      this.router.navigateByUrl(this.returnUrl);
+    }
   }
 
   async getFormData(event: FormGroup) {
