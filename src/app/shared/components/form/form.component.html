@@ -8,7 +8,9 @@
 
 
         <input *ngIf="field.type === 'checkbox'" [formControlName]="field.name" class="form-check-input" type="checkbox" role="switch" [id]="field.name" [checked]="field.initialValue">
-        <label *ngIf="field.type === 'checkbox'" class="form-check-label" [for]="field.name">Checked switch checkbox input</label>
+        <label *ngIf="field.type === 'checkbox'" class="form-check-label" [for]="field.name">
+            <span [innerText]="field.name"></span>
+        </label>
     </div>
 
     <button *ngIf="!isButtonHidden()" [disabled]="form.invalid" class="w-100 mt-3 btn btn-primary"
