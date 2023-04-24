@@ -17,14 +17,14 @@ export class LoginComponent implements OnInit {
   fields: IField[] = [
     {
       name: 'username',
-      initialValue: 'hasan.ersoy',
+      initialValue: null,
       validators: [Validators.required],
       disabled: false,
       type: 'text'
     },
     {
       name: 'password',
-      initialValue: 'Haser1.',
+      initialValue: null,
       validators: [Validators.required],
       disabled: false,
       type: 'password'
